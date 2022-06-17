@@ -4,16 +4,13 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route}
 	from 'react-router-dom';
 import Home from './pages';
-import About from './pages/Home';
-import Blogs from './pages/Popular';
-import SignUp from './pages/Upcoming';
-import Contact from './pages/TopRated';
 import Favorite from './pages/Favorite';
 import Popular from './pages/Popular';
 import Search from './pages/Search';
 import TopRated from './pages/TopRated';
 import Upcoming from './pages/Upcoming';
 import MoviePage from './pages/MoviePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 return (
