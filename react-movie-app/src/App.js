@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route}
 	from 'react-router-dom';
@@ -10,7 +11,6 @@ import Search from './pages/Search';
 import TopRated from './pages/TopRated';
 import Upcoming from './pages/Upcoming';
 import MoviePage from './pages/MoviePage';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 return (
