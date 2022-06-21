@@ -12,20 +12,8 @@ return (
 		<NavLink to="/favorite" activeStyle>
 			Favorite
 		</NavLink>
-		<NavLink to="/moviePage" activeStyle>
-			MoviePage
-		</NavLink>
-		<NavLink to="/popular" activeStyle>
-			Popular
-		</NavLink>
 		<NavLink to="/search" activeStyle>
 			Search
-		</NavLink>
-		<NavLink to="/topRated" activeStyle>
-			TopRated
-		</NavLink>
-		<NavLink to="/upcoming" activeStyle>
-			Upcoming
 		</NavLink>
 		</NavMenu>
 	</Nav>

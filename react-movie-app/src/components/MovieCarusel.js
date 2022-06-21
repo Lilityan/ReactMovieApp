@@ -2,7 +2,6 @@ import React from 'react';
 import { Carousel } from "react-bootstrap";
 
 const MovieCarusel = ({ movies }) => {
-    console.log(movies, "moviessssssssssssssssss???????????????");
     const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
     return (
         <div>

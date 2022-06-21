@@ -6,7 +6,7 @@ const Header = ({ title, path }) => {
 
     return (
         <Navbar>
-            <Container>
+            <Container style={{margin: "0"}}>
                 <Navbar.Collapse className="justify-content-start" style={{ fontSize: "20px" }}>
                     {title}
                 </Navbar.Collapse>

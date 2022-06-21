@@ -5,15 +5,21 @@ import { getPopularMovies } from '../features/popularMovies/popularMoviesSlice';
 import axios from 'axios';
 import Section from '../components/Section';
 import MovieCard from '../components/MovieCard';
+import { getTopRatedMovies } from '../features/topRatedMovies/topRatedSlice';
+import { getUpcomingMovies } from '../features/upcomingMovies/upcomingMoviesSlice';
 
 const Home = () => {
 	const dispatch = useDispatch();
 	const { popularMovies: { results: allPopularMovies } } = useSelector(state => state.popularMovies);
+	const { upcomingMovies: { results: upcomingMovies } } = useSelector(state => state.upcomingMovies);
+	const { topRatedMovies: { results: topRatedMovies } } = useSelector(state => state.topRatedMovies);
 	const popFiveMovies = allPopularMovies?.slice(0, 9);
 	axios.defaults.baseURL = "https://api.themoviedb.org/3/";
 
 	useEffect(() => {
 		dispatch(getPopularMovies());
+		dispatch(getTopRatedMovies());
+		dispatch(getUpcomingMovies());
 	}, [dispatch]);
 
 
@@ -22,7 +28,9 @@ const Home = () => {
 			<h1>5 popular movies</h1>
 			{popFiveMovies ? <MovieCarusel movies={popFiveMovies} /> : <></>}
 			{popFiveMovies ? <Section movieList={popFiveMovies} title={"Popular movies"} path={"/popular"}/> : <></>}
-			{popFiveMovies ? <MovieCard movie={popFiveMovies[0]} /> : <></>}
+			{upcomingMovies ? <Section movieList={upcomingMovies} title={"Upcoming movies"} path={"/upcoming"}/> : <></>}
+			{topRatedMovies ? <Section movieList={topRatedMovies} title={"Top-rated movies"} path={"/toprated"}/> : <></>}
+			{/* {popFiveMovies ? <MovieCard movie={popFiveMovies[0]} /> : <></>} */}
 		</div>
 	);
 };

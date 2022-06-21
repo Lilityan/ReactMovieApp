@@ -11,7 +11,6 @@ export const getPopularMovies = createAsyncThunk('popularMovies/getPopularMovies
             api_key: process.env.REACT_APP_MOVIE_API_KEY
         }
     });
-    console.log(res, "fetchhhhhhhhhhhhhhhhhhhhhhhhh")
     dispatch(setPopularMovies(res.data))
 })
 
@@ -20,15 +19,14 @@ export const popularMoviesSlice = createSlice({
     initialState,
     reducers: {
         setPopularMovies: (state, action) => {
-            console.log(action.payload, "payload")
             state.popularMovies = action.payload
         }
     },
-    extraReducers: {
-        [getPopularMovies.fulfilled]: () => console.log("fulfilled"),
-        [getPopularMovies.pending]: () => console.log("pending"),
-        [getPopularMovies.rejected]: () => console.log("rejected")
-    }
+    // extraReducers: {
+    //     [getPopularMovies.fulfilled]: () => console.log("fulfilled"),
+    //     [getPopularMovies.pending]: () => console.log("pending"),
+    //     [getPopularMovies.rejected]: () => console.log("rejected")
+    // }
 })
 
 export const { setPopularMovies } = popularMoviesSlice.actions;
