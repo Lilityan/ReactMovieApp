@@ -7,7 +7,7 @@ import Header from "./Header";
 
 const Section = ({ movieList, title, path }) => {
 
-    const gridMovies = movieList.slice(0,6);
+    const gridMovies = movieList?.slice(0,6);
     return (
         <>
         <Header title={title} path={path} />

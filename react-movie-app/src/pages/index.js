@@ -6,6 +6,7 @@ import axios from 'axios';
 import Section from '../components/Section';
 import { getTopRatedMovies } from '../features/topRatedMovies/topRatedSlice';
 import { getUpcomingMovies } from '../features/upcomingMovies/upcomingMoviesSlice';
+import Popular from './Popular';
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -20,15 +21,15 @@ const Home = () => {
 		dispatch(getTopRatedMovies());
 		dispatch(getUpcomingMovies());
 	}, [dispatch]);
-
+	console.log(allPopularMovies, "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
 
 	return (
 		<div>
 			<h1>5 popular movies</h1>
 			{popFiveMovies ? <MovieCarusel movies={popFiveMovies} /> : <></>}
-			{popFiveMovies ? <Section movieList={allPopularMovies} title={"Popular movies"} path={"popular"}/> : <></>}
-			{upcomingMovies ? <Section movieList={upcomingMovies} title={"Upcoming movies"} path={"upcoming"}/> : <></>}
-			{topRatedMovies ? <Section movieList={topRatedMovies} title={"Top-rated movies"} path={"toprated"}/> : <></>}
+			{popFiveMovies ? <Section movieList={allPopularMovies} title={"Popular movies"} path={"/popular"}/> : <></>}
+			{upcomingMovies ? <Section movieList={upcomingMovies} title={"Upcoming movies"} path={"/upcoming"}/> : <></>}
+			{topRatedMovies ? <Section movieList={topRatedMovies} title={"Top-rated movies"} path={"/toprated"}/> : <></>}
 		</div>
 	);
 };
