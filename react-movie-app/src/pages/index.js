@@ -6,7 +6,6 @@ import axios from 'axios';
 import Section from '../components/Section';
 import { getTopRatedMovies } from '../features/topRatedMovies/topRatedSlice';
 import { getUpcomingMovies } from '../features/upcomingMovies/upcomingMoviesSlice';
-import Popular from './Popular';
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -21,7 +20,6 @@ const Home = () => {
 		dispatch(getTopRatedMovies());
 		dispatch(getUpcomingMovies());
 	}, [dispatch]);
-	console.log(allPopularMovies, "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
 
 	return (
 		<div>
