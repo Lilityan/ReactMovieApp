@@ -4,9 +4,7 @@ import Movies from "../pages/Movies";
 const Upcoming = () => {
 
 	return (
-		<>
-			<Movies url={`movie/upcoming`} title={"Upcoming movies"} />
-		</>
+		<Movies url={`movie/upcoming`} title={"Upcoming movies"} />
 	);
 };
 

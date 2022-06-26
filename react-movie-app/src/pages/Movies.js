@@ -49,7 +49,7 @@ const Movies = ({url, title}) => {
 			<h1>{title}</h1>
 			<Container fluid>
 				<Row lg={'auto'}>
-					{data.map(movie => { return (<Col sm><MovieCard movie={movie} /></Col>) })}
+					{data.map((movie, index) => { return (<Col sm key={index}><MovieCard movie={movie} /></Col>) })}
 				</Row>
 			</Container>
 			{

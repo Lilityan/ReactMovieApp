@@ -4,9 +4,7 @@ import Movies from '../pages/Movies';
 const Popular = () => {
 
 	return (
-		<>
-			<Movies url={`movie/popular`} title={"Popular movies"} />
-		</>
+		<Movies url={`movie/popular`} title={"Popular movies"} />
 	);
 };
 

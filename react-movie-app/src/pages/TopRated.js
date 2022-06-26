@@ -3,9 +3,7 @@ import Movies from '../pages/Movies'
 
 const TopRated = () => {
 	return (
-		<>
-			<Movies url={`movie/top_rated`} title={"Top rated"} />
-		</>
+		<Movies url={`movie/top_rated`} title={"Top rated"} />
 	);
 };
 

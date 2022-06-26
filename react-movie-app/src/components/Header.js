@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 
 const Header = ({ title, path }) => {
