@@ -3,6 +3,7 @@ import popularMoviesSlice from "../features/popularMovies/popularMoviesSlice";
 import topRatedSlice from "../features/topRatedMovies/topRatedSlice";
 import upcomingMoviesSlice from "../features/upcomingMovies/upcomingMoviesSlice";
 import selectedMovieSlice from "../features/selectedMovieSlice";
+import favoriteMovieSlice from "../features/favoriteMovieSlice";
 
 export const store = configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
         topRatedMovies: topRatedSlice,
         upcomingMovies: upcomingMoviesSlice,
         selectedMovie: selectedMovieSlice,
+        favoriteMovies: favoriteMovieSlice,
     },
 })

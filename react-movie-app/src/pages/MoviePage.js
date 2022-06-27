@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from "./MoviePage.css";
 import { ToggleButton } from 'react-bootstrap';
+import { setFavoriteMovie } from '../features/favoriteMovieSlice';
 
 const MoviePage = () => {
 	const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 	const { selectedMovie: movie } = useSelector(state => state.selectedMovie);
+	const favoriteMovies = useSelector(state => state.favoriteMovies);
 	const [checked, setChecked] = useState(false)
+	const dispatch = useDispatch();
+
+	const movieIsAdded = favoriteMovies.favoriteMoviesIds.includes(movie.id)
+	const handleAddToFavorite = (e) => {
+		setChecked(e.currentTarget.checked);
+		if (!movieIsAdded) {
+			dispatch(setFavoriteMovie(movie));
+		}
+	}
 
 	return (
 		<div className={styles.movieDetailsContainer}>
@@ -33,17 +44,17 @@ const MoviePage = () => {
 					<strong>Release date:</strong> {movie.release_date}
 				</p>
 			</div>
-			<ToggleButton
+			{movieIsAdded ? <text style={{color: "red"}}>This movie has been added to favorite</text> : <ToggleButton
 				className="mb-2"
 				id="toggle-check"
 				type="checkbox"
 				variant="outline-primary"
 				checked={checked}
 				value="1"
-				onChange={(e) => setChecked(e.currentTarget.checked)}
+				onChange={handleAddToFavorite}
 			>
 				Add to favorite list
-			</ToggleButton>
+			</ToggleButton>}
 		</div >
 	);
 };

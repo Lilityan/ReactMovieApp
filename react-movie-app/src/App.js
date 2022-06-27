@@ -25,6 +25,7 @@ return (
     	<Route path='/search' element={<Search/>} />
     	<Route path='/topRated' element={<TopRated/>} />
     	<Route path='/upcoming' element={<Upcoming/>} />
+		<Route path='/*' element={<MoviePage />} />
 	</Routes>
 	</Router>
 );

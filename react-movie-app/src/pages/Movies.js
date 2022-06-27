@@ -11,7 +11,7 @@ const Movies = ({url, title}) => {
 	const [loading, setLoading] = useState(false);
 	const [hasNextPage, setHasNextPage] = useState(true);
 
-	const fetchmore = async (since) => {
+	const fetchmore = async () => {
 
 		try {
 			const response = await axios.get(`https://api.themoviedb.org/3/${url}`, {

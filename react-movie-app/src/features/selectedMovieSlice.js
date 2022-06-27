@@ -3,10 +3,6 @@ const initialState = {
     selectedMovie: {}
 }
 
-// export const SetSelectedMovie = (movie) => {
-//     return selectedMovieSlice(movie);
-// }
-
 export const selectedMovieSlice = createSlice({
     name: "features/selectedMovie",
     initialState,
