@@ -9,7 +9,7 @@ const Search = () => {
 	const [searchKey, setSearchKey] = useState("");
 	const [movies, setMovies] = useState([]);
 	const getData = async () => {
-		const data = axios.get(`/search/movie`, {
+		axios.get(`/search/movie`, {
 			params: {
 				api_key: process.env.REACT_APP_MOVIE_API_KEY,
 				query: searchKey
